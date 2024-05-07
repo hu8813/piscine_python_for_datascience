@@ -5,7 +5,7 @@ setup(
     version='0.0.1',
     packages=find_packages(),
     license='MIT',
-    author='eagle',
+    author='huaydin',
     author_email='huaydin@student.42vienna.com',
     url='https://github.com/hu8813/ft_package',
     description='A sample test package',
