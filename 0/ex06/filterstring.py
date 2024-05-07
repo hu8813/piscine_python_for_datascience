@@ -8,8 +8,7 @@ def filter_string(s, n):
     """
     try:
         # Check if the input string contains special characters
-        if any(char in string.punctuation for char in s):
-            raise ValueError("Input string contains special characters")
+        assert all(char not in string.punctuation for char in s), "Input string contains special characters"
 
         # Split the string into words and apply the filter
         return list(ft_filter(lambda word: len(word) > n, s.split()))
@@ -22,13 +21,9 @@ def main():
     Main function of the program.
     """
     try:
-        if len(sys.argv) != 3:
-            raise AssertionError("the arguments are bad")
-
+        assert len(sys.argv) == 3, "the arguments are bad"
         s, n = sys.argv[1], int(sys.argv[2])
-
-        if not isinstance(s, str) or not isinstance(n, int) or n < 0:
-            raise AssertionError("the arguments are bad")
+        assert isinstance(s, str) and isinstance(n, int) and n >= 0, "the arguments are bad"
 
         result = filter_string(s, n)
         print(result)
