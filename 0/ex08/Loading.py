@@ -1,3 +1,4 @@
+# import shutil
 from time import sleep, time
 
 
@@ -16,10 +17,11 @@ Displays a progress bar while iterating over the given iterable."""
     start_time = time()
     progress = 0
     for elem in lst:
+        # bar_length = max(min(shutil.get_terminal_size().columns - 40,30),10)
+        bar_length = 30
         progress += 1
         percentage = int(progress / total * 100)
 
-        bar_length = 40
         filled_length = int(bar_length * progress // total)
         bar = '█' * filled_length + ' ' * (bar_length - filled_length)
 
