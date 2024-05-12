@@ -2,11 +2,9 @@ from time import sleep, time
 
 
 def ft_tqdm(lst):
-    """
-    ft_tqdm(lst) -> Iterable with progress bar
+    """ft_tqdm(lst) -> Iterable with progress bar
 
-    Displays a progress bar while iterating over the given iterable.
-    """
+Displays a progress bar while iterating over the given iterable."""
     try:
         total = len(lst)
     except TypeError:
@@ -44,14 +42,19 @@ def ft_tqdm(lst):
         remaining_minutes = int(remaining_time // 60)
         remaining_seconds = int(remaining_time % 60)
         remaining_time_str = f"{remaining_minutes:02d}:{remaining_seconds:02d}"
-        strpercentage = str(percentage) + '%'
-        padding = 1 if percentage < 100 and percentage >0 else 0
-        print(f'\r{strpercentage.rjust(3 + padding)}|{bar}| {progress}/{total} [{elapsed_time_str}<{remaining_time_str}, {it_per_sec:.2f}it/s]', end='', flush=True)
+        percent = str(percentage) + '%'
+        padding = 1 if percentage < 100 and percentage > 0 else 0
+        print(f'\r{percent.rjust(3 + padding)}|{bar}| {progress}/{total} \
+[{elapsed_time_str}<{remaining_time_str}, {it_per_sec:.2f}it/s]',
+              end='', flush=True)
 
         yield elem
 
 
-        
-if __name__ == "__main__":
+def main():
     for elem in ft_tqdm(range(333)):
         sleep(0.005)
+
+
+if __name__ == "__main__":
+    main()

@@ -14,7 +14,7 @@ def count_in_list(lst, item):
             raise TypeError("Parameter 'lst' must be a list")
         if len(lst) == 0:
             raise ValueError("Parameter 'lst' cannot be empty")
-        
+
         return lst.count(item)
     except TypeError as te:
         print(f"TypeError: {te}")
