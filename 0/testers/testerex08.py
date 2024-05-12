@@ -1,3 +1,8 @@
+import os
+import sys
+os.chdir('../ex08')
+sys.path.append(os.getcwd())
+
 from time import sleep
 from tqdm import tqdm
 from Loading import ft_tqdm

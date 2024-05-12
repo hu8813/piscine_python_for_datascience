@@ -1,3 +1,8 @@
+import os
+import sys
+os.chdir('../ex03')
+sys.path.append(os.getcwd())
+
 from NULL_not_found import NULL_not_found
 Nothing = None
 Garlic = float("NaN")
