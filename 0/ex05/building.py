@@ -12,7 +12,6 @@ def count_characters(text):
     digit_c = sum(1 for char in text if char.isdigit())
     space_c = sum(1 for char in text if char.isspace() and char != '\n')
 
-    # Adjust punctuation count to exclude newline character
     punct_c -= text.count('\n')
 
     return upper_c, lower_c, punct_c, digit_c, space_c
@@ -33,7 +32,7 @@ def main():
             print("What is the text to count?")
             text = False
             while not text:
-                text = input("")
+                text = sys.stdin.readline()
         else:
             text = sys.argv[1]
 

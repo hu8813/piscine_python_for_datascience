@@ -6,7 +6,10 @@ try:
     elif len(sys.argv) != 2:
         raise AssertionError("more than one argument is provided")
     arg = sys.argv[1]
-    if not arg.isdigit():
+    assert (arg.strip()), "argument is empty or consists only of whitespace"
+
+    if not arg.isdigit() and not arg[0] == '-' and not arg[1:].isdigit() \
+            and not arg[0] == '+':
         raise AssertionError("argument is not an integer")
 
     num = int(arg)
